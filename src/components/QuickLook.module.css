@@ -1,0 +1,118 @@
+.dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  width: min(880px, calc(100% - 2rem));
+  max-height: calc(100vh - 3rem);
+  color: var(--ink);
+  overflow: visible;
+}
+.dialog::backdrop {
+  background: rgba(30, 14, 20, 0.5);
+  backdrop-filter: blur(2px);
+}
+.dialog[open] .panel {
+  animation: pop var(--t-med) var(--ease);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+}
+.panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  background: var(--paper);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-lift);
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
+}
+.close {
+  position: absolute;
+  top: var(--s-3);
+  right: var(--s-3);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+.thumb {
+  background: var(--surface);
+  padding: var(--s-6);
+  display: grid;
+  place-items: center;
+}
+.thumb > figure {
+  width: 100%;
+  max-width: 18rem;
+}
+.body {
+  padding: var(--s-6);
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+}
+.series {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-3);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  padding-right: 2.5rem;
+}
+.series a {
+  font-weight: 600;
+  color: var(--copper);
+}
+.title {
+  font-size: var(--step-3);
+}
+.subject {
+  color: var(--ink-soft);
+  margin-top: calc(var(--s-2) * -1);
+}
+.summary {
+  font-size: var(--step-0);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+}
+@media (max-width: 700px) {
+  .dialog {
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0;
+    max-height: 92vh;
+  }
+  .panel {
+    grid-template-columns: 1fr;
+    border-radius: var(--r-card) var(--r-card) 0 0;
+    max-height: 92vh;
+  }
+  .thumb {
+    padding: var(--s-5) var(--s-5) var(--s-3);
+  }
+  .thumb > figure {
+    max-width: 11rem;
+  }
+  .body {
+    padding: var(--s-4) var(--s-5) var(--s-6);
+  }
+}

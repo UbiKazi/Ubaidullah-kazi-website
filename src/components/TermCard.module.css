@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  background: var(--amber-card);
+  border-radius: var(--r-card);
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  right: -2.5rem;
+  bottom: -2.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 14px solid color-mix(in srgb, var(--gold) 30%, transparent);
+  pointer-events: none;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-2);
+  font-size: 0.78rem;
+}
+.kicker {
+  font-weight: 600;
+  color: var(--copper);
+}
+.domain {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+.term {
+  font-size: var(--step-2);
+}
+.large .term {
+  font-size: var(--step-4);
+}
+.term a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.term a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+}
+.switch {
+  display: inline-flex;
+  align-self: flex-start;
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+  border-radius: var(--r-control);
+  padding: 3px;
+  position: relative;
+  z-index: 1;
+}
+.switch button {
+  border: 0;
+  background: transparent;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--r-control);
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+.switch button[aria-selected="true"] {
+  background: var(--band);
+  color: var(--on-primary);
+}
+.body {
+  display: grid;
+  gap: var(--s-3);
+  position: relative;
+  z-index: 1;
+  min-height: 7.5rem;
+}
+.def {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+.large .def {
+  font-size: var(--step-1);
+}
+.example,
+.related {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.foot {
+  margin-top: auto;
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  position: relative;
+  z-index: 1;
+}

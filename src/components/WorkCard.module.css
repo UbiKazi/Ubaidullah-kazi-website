@@ -1,0 +1,194 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  transition: border-color var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+  height: 100%;
+}
+.card:hover,
+.card:focus-within {
+  border-color: var(--line-strong);
+}
+.card:hover .desk :global(figure):first-child,
+.card:focus-within .desk :global(figure):first-child {
+  transform: translateY(-4px) rotate(-0.4deg);
+  box-shadow: var(--shadow-lift);
+}
+
+/* The "desk" the document sits on */
+.desk {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: var(--s-5) var(--s-5) var(--s-5);
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box;
+  border-bottom: 1px solid var(--line);
+  min-height: 15rem;
+}
+.portrait .desk > :global(figure):first-child {
+  width: min(62%, 11.5rem);
+}
+.landscape .desk > :global(figure):first-child {
+  width: 88%;
+}
+.large.portrait .desk > :global(figure):first-child {
+  width: min(52%, 19rem);
+}
+.large .companion {
+  width: 50%;
+  right: 4%;
+}
+.companion {
+  position: absolute !important;
+  right: 6%;
+  bottom: 12%;
+  width: 46%;
+  transform: rotate(3deg);
+}
+.card:hover .companion {
+  transform: rotate(5deg) translateX(4px);
+}
+.formatChip {
+  position: absolute;
+  left: var(--s-3);
+  top: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-4) var(--s-5) var(--s-4);
+  flex: 1;
+}
+.series {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  font-size: 0.78rem;
+}
+.seriesName {
+  color: var(--copper);
+  font-weight: 600;
+}
+.date {
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+.heading {
+  font-size: var(--step-1);
+}
+.stretch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+.stretch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.stretch:focus-visible {
+  box-shadow: none;
+}
+.stretch:focus-visible::after {
+  box-shadow: inset 0 0 0 3px var(--copper-bright);
+  border-radius: var(--r-card);
+}
+.title {
+  font-family: var(--font-display);
+  font-weight: 580;
+}
+.subject {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+.summary {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+.foot {
+  margin-top: auto;
+  padding-top: var(--s-3);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-2);
+}
+.large .desk {
+  flex: 1;
+  min-height: 22rem;
+}
+.cue {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.card:hover .cue {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+}
+
+@media (max-width: 560px) {
+  /* compact horizontal card on phones */
+  .card {
+    flex-direction: row;
+  }
+  .desk {
+    flex: 0 0 38%;
+    min-height: 0;
+    padding: var(--s-3);
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+  .portrait .desk > :global(figure):first-child,
+  .landscape .desk > :global(figure):first-child,
+  .large.portrait .desk > :global(figure):first-child {
+    width: 100%;
+  }
+  .companion,
+  .formatChip,
+  .desk :global(figure) > span {
+    display: none;
+  }
+  .body {
+    padding: var(--s-3);
+  }
+  .summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .cue {
+    display: none;
+  }
+}

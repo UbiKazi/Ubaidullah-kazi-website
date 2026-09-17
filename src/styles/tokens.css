@@ -1,0 +1,101 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — derived from the SECTORSCOPE one-pager palette.
+   Light is the default; dark is a burgundy-night variant.
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* colour */
+  --paper: #fbf8f3;
+  --surface: #f4ebe6;
+  --sand: #efdfc5;
+  --sand-deep: #e6d1ad;
+  --ink: #2a1e22;
+  --ink-soft: #4a3b40;
+  --ink-muted: #6e6166;
+  --primary: #7b2e40;
+  --primary-deep: #5e2231;
+  --primary-tint: #efe0e2;
+  --on-primary: #fbf8f3;
+  --band: #7b2e40;
+  --band-deep: #5e2231;
+  --gold: #d6a848;
+  --gold-soft: #ecd7a4;
+  --copper: #8f5215;
+  --copper-bright: #a8621a;
+  --amber-card: #f3e2be;
+  --sim: #e7e3ec;
+  --sim-ink: #3d3552;
+  --navy: #0e2340;
+  --line: #e4dbd6;
+  --line-strong: #cdbfb8;
+  --shadow-paper: 0 1px 0 rgba(60, 30, 20, 0.06), 0 8px 24px -12px rgba(60, 30, 20, 0.28);
+  --shadow-lift: 0 2px 0 rgba(60, 30, 20, 0.06), 0 18px 40px -18px rgba(60, 30, 20, 0.42);
+  --focus: 0 0 0 3px var(--paper), 0 0 0 5px var(--copper-bright);
+
+  /* type */
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --step--2: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --step--1: clamp(0.84rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+  --step-1: clamp(1.18rem, 1.1rem + 0.35vw, 1.35rem);
+  --step-2: clamp(1.4rem, 1.25rem + 0.7vw, 1.8rem);
+  --step-3: clamp(1.75rem, 1.45rem + 1.4vw, 2.6rem);
+  --step-4: clamp(2.2rem, 1.6rem + 2.8vw, 3.9rem);
+  --step-5: clamp(2.6rem, 1.7rem + 4.4vw, 5rem);
+
+  /* space */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: 7rem;
+
+  --gutter: clamp(1.1rem, 4vw, 3rem);
+  --measure: 68ch;
+  --page: 1240px;
+
+  /* shape — radius follows hierarchy: documents are square, controls are soft */
+  --r-doc: 2px;
+  --r-card: 6px;
+  --r-control: 999px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 140ms;
+  --t-med: 280ms;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #1b1316;
+  --surface: #251a1e;
+  --sand: #31242a;
+  --sand-deep: #3b2c32;
+  --ink: #f3ece6;
+  --ink-soft: #ded2cb;
+  --ink-muted: #b6a8a3;
+  --primary: #d88a9b;
+  --primary-deep: #5e2231;
+  --primary-tint: #3a2229;
+  --on-primary: #fbf8f3;
+  --band: #5a2231;
+  --band-deep: #401820;
+  --gold: #d6a848;
+  --gold-soft: #5a4826;
+  --copper: #e0a565;
+  --copper-bright: #e0a565;
+  --amber-card: #3a2d1c;
+  --sim: #2b2733;
+  --sim-ink: #d4cde4;
+  --line: #3a2e31;
+  --line-strong: #54444a;
+  --shadow-paper: 0 1px 0 rgba(0, 0, 0, 0.3), 0 10px 26px -12px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 2px 0 rgba(0, 0, 0, 0.3), 0 20px 44px -18px rgba(0, 0, 0, 0.85);
+  color-scheme: dark;
+}
