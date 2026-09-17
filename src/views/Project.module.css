@@ -1,0 +1,312 @@
+.page {
+  padding-bottom: var(--s-6);
+}
+.crumbs {
+  padding-top: var(--s-5);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+.crumbs a {
+  color: var(--ink-soft);
+}
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--s-7);
+  align-items: center;
+  padding-block: var(--s-6) var(--s-7);
+  border-bottom: 1px solid var(--line);
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-4);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-bottom: var(--s-3);
+}
+.seriesName {
+  color: var(--copper);
+  font-weight: 600;
+}
+.title {
+  font-size: var(--step-5);
+  line-height: 1;
+  color: var(--primary);
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+}
+.subject {
+  margin-top: var(--s-3);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: 1.25;
+  font-weight: 400;
+}
+.summary {
+  margin-top: var(--s-4);
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+  max-width: 52ch;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  align-items: center;
+}
+.metrics {
+  margin-top: var(--s-5);
+  max-width: 34rem;
+}
+.headThumb {
+  background: var(--surface);
+  border-radius: var(--r-card);
+  padding: var(--s-6);
+  display: grid;
+  place-items: center;
+}
+.headThumb > figure {
+  width: 100%;
+  max-width: 21rem;
+  transform: rotate(-1.2deg);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: var(--s-7);
+  padding-top: var(--s-7);
+}
+.sec + .sec {
+  margin-top: var(--s-7);
+}
+.h2 {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  font-size: var(--step-3);
+  margin-bottom: var(--s-4);
+}
+.secNum {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--on-primary);
+  background: var(--band);
+  min-width: 1.6rem;
+  height: 1.6rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 2px;
+  transform: translateY(-0.3rem);
+}
+.lede {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.55;
+  max-width: 60ch;
+  font-weight: 400;
+}
+.approach {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--s-2);
+}
+.approach li {
+  counter-increment: step;
+  padding: var(--s-3) var(--s-4) var(--s-3) 2.8rem;
+  background: var(--surface);
+  border-radius: var(--r-card);
+  position: relative;
+  line-height: 1.4;
+}
+.approach li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: var(--s-4);
+  top: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--copper);
+  padding-top: 0.15rem;
+}
+.areas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.areas li {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, var(--paper));
+  border-radius: 3px;
+  font-weight: 500;
+}
+.insights {
+  display: grid;
+  gap: var(--s-4);
+}
+.insight {
+  padding: var(--s-5);
+  border-left: 3px solid var(--band);
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 var(--r-card) var(--r-card) 0;
+}
+.insight h3 {
+  font-size: var(--step-1);
+  margin-bottom: var(--s-2);
+}
+.insight p {
+  color: var(--ink-soft);
+  max-width: 64ch;
+}
+.pages {
+  list-style: none;
+  margin: 0;
+  padding: var(--s-5);
+  background: var(--surface);
+  border-radius: var(--r-card);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--s-5);
+  align-items: start;
+}
+.pageWide {
+  grid-column: span 2;
+}
+.caption {
+  margin-top: var(--s-2);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+}
+.aside {
+  position: relative;
+}
+.docBox {
+  position: sticky;
+  top: 5.5rem;
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--r-card);
+}
+.docLabel {
+  font-weight: 600;
+  color: var(--primary);
+}
+.docName {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.companion {
+  display: grid;
+  gap: var(--s-2);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+}
+.sources {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+}
+.next {
+  margin-top: var(--s-8);
+}
+.nextLink {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: var(--s-5) var(--s-6);
+  background: var(--band);
+  color: var(--on-primary);
+  border-radius: var(--r-card);
+  text-decoration: none;
+}
+.nextLink small {
+  opacity: 0.75;
+}
+.nextLink span {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+}
+.nextLink em {
+  font-style: normal;
+  color: #ecd7a4;
+  font-size: var(--step-1);
+}
+.nextLink:hover span {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+}
+.mobileBar {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    order: -1;
+  }
+  .docBox {
+    position: static;
+  }
+}
+@media (max-width: 800px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+  }
+  .headThumb {
+    order: -1;
+    padding: var(--s-4);
+  }
+  .headThumb > figure {
+    max-width: 13rem;
+  }
+  .pageWide {
+    grid-column: auto;
+  }
+  .pages {
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    order: 0;
+  }
+  .mobileBar {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    padding: var(--s-3) var(--gutter);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line);
+    margin-top: var(--s-5);
+  }
+  .mobileBar > * {
+    width: 100%;
+    justify-content: center;
+  }
+}
